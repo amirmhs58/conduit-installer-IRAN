@@ -8,8 +8,8 @@ BIN="/usr/local/bin/conduit"
 UNIT="/etc/systemd/system/conduit.service"
 
 DEFAULT_DATA_DIR="/var/lib/conduit"
-DEFAULT_MAX_CLIENTS="200"
-DEFAULT_BANDWIDTH="200"
+DEFAULT_MAX_CLIENTS="50"
+DEFAULT_BANDWIDTH="40"
 DEFAULT_VERBOSE="vv"      # "", "v", "vv"
 DEFAULT_JOURNAL_MB="50"
 
