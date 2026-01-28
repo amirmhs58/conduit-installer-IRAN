@@ -21,14 +21,6 @@ Conduit به دستگاه/سرور شما اجازه می‌دهد به عنوا
 
 ---
 
-## نصب سریع
-
-```bash
-git clone https://github.com/amirmhs58/conduit-installer-IRAN.git
-cd conduit-installer-IRAN
-sudo -i
-chmod +x conduit-install-universal.sh
-./conduit-install-universal.sh
 
 ---
 اسکریپت از شما می‌پرسد:
@@ -84,3 +76,12 @@ sudo -i
 ---
 مسئولیت استفاده
 استفاده از این ابزار و مسئولیت‌های شبکه/قانونی و امنیتی با کاربر است. این پروژه صرفاً ابزار نصب و مدیریت سرویس را ارائه می‌دهد.
+
+## نصب سریع
+
+```bash
+git clone https://github.com/amirmhs58/conduit-installer-IRAN.git
+cd conduit-installer-IRAN
+sudo -i
+chmod +x conduit-install-universal.sh
+./conduit-install-universal.sh
