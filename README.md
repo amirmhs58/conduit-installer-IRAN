@@ -1,29 +1,31 @@
-# نصب Conduit (Psiphon) روی Ubuntu به صورت Native (بدون Docker)
+# Conduit Installer (Ubuntu) | نصب Conduit روی اوبونتو (بدون Docker)
 
-این ریپو یک اسکریپت نصب **یک‌پارچه** ارائه می‌دهد که روی Ubuntu، Conduit را به صورت **Native** (بدون Docker) نصب و به شکل سرویس `systemd` اجرا می‌کند.
+این پروژه یک اسکریپت **نصب و راه‌اندازی خودکار** برای اجرای Conduit (از تیم Psiphon) روی Ubuntu به صورت Native (بدون Docker) فراهم می‌کند. [web:20]  
+Conduit به دستگاه/سرور شما اجازه می‌دهد به عنوان یک «نقطهٔ اتصال امن» در شبکهٔ Psiphon عمل کند و به عبور ترافیک رمزنگاری‌شده کاربران در شرایط سانسور کمک کند. [web:210]
 
-این اسکریپت برای دو معماری زیر طراحی شده:
-- `x86_64 / amd64`
-- `aarch64 / arm64`
+---
 
 ## ویژگی‌ها
+- تشخیص خودکار معماری CPU (ARM64 و AMD64)
+- دانلود باینری مناسب و نصب در `/usr/local/bin/conduit`
+- ساخت سرویس `systemd` برای اجرای دائمی و Auto-Restart
+- استفاده از Data Directory پایدار (برای حفظ state و کلیدها)
+- محدودسازی حجم لاگ‌های `journald` و نگه‌داری تا ۷ روز (مدیریت فضای دیسک) [web:166]
 
-- تشخیص خودکار معماری CPU و دانلود باینری مناسب
-- نصب باینری در مسیر استاندارد: `/usr/local/bin/conduit`
-- ساخت سرویس systemd برای اجرای دائمی و Auto-Restart
-- استفاده از Data Directory پایدار (برای حفظ کلیدها و state)
-- محدود کردن حجم لاگ‌های journald و نگه‌داری تا ۷ روز (برای مدیریت فضای دیسک)
+---
 
 ## پیش‌نیازها
+- Ubuntu با دسترسی `root` (یا `sudo -i`)
+- اینترنت برای دانلود باینری از GitHub Releases
+- باز بودن پورت‌ها/فایروال مطابق تنظیمات شبکه شما
 
-- Ubuntu با دسترسی `root` یا `sudo -i`
-- دسترسی به اینترنت برای دانلود باینری Conduit
-- باز بودن پورت‌های لازم بر اساس تنظیمات شبکه/فایروال شما
+---
 
-## نصب
+## نصب سریع
 
-1) دریافت فایل‌های ریپو:
 ```bash
-git clone <YOUR_REPO_URL>
-cd <REPO_FOLDER>
-
+git clone https://github.com/amirmhs58/conduit-installer-IRAN.git
+cd conduit-installer-IRAN
+sudo -i
+chmod +x conduit-install-universal.sh
+./conduit-install-universal.sh
