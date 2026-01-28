@@ -29,3 +29,54 @@ cd conduit-installer-IRAN
 sudo -i
 chmod +x conduit-install-universal.sh
 ./conduit-install-universal.sh
+
+اسکریپت از شما می‌پرسد:
+
+مسیر دیتا (پیش‌فرض: /var/lib/conduit)
+
+حداکثر کلاینت‌ها (-m)
+
+محدودیت پهنای‌باند Mbps (-b)
+
+سطح لاگ (-v یا -vv)
+
+سقف حجم لاگ سیستم (journald)
+
+بررسی وضعیت و لاگ
+وضعیت سرویس:
+
+bash
+systemctl status conduit -l --no-pager
+لاگ زنده:
+
+bash
+journalctl -fu conduit.service
+تنظیمات مهم Conduit
+در زمان نصب این گزینه‌ها تنظیم می‌شوند:
+
+-m یا --max-clients: حداکثر تعداد کلاینت هم‌زمان
+
+-b یا --bandwidth: محدودیت مجموع پهنای‌باند (Mbps)
+
+-d یا --data-dir: مسیر ذخیره state/keys
+
+-v / -vv: افزایش سطح لاگ (Verbose/Debug)
+
+تغییر تنظیمات بعد از نصب
+ویرایش فایل سرویس:
+
+bash
+nano /etc/systemd/system/conduit.service
+بعد از تغییر:
+
+bash
+systemctl daemon-reload
+systemctl restart conduit
+حذف (Uninstall)
+اگر فایل uninstall.sh را اضافه کرده‌اید:
+
+bash
+sudo -i
+./uninstall.sh
+مسئولیت استفاده
+استفاده از این ابزار و مسئولیت‌های شبکه/قانونی و امنیتی با کاربر است. این پروژه صرفاً ابزار نصب و مدیریت سرویس را ارائه می‌دهد.
