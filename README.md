@@ -87,5 +87,5 @@ sudo -i
 git clone https://github.com/amirmhs58/conduit-installer-IRAN.git
 cd conduit-installer-IRAN
 sudo -i
-chmod +x conduit-install-universal.sh
-./conduit-install-universal.sh
+chmod +x install.sh
+./install.sh
