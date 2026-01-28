@@ -30,6 +30,7 @@ sudo -i
 chmod +x conduit-install-universal.sh
 ./conduit-install-universal.sh
 
+---
 اسکریپت از شما می‌پرسد:
 
 مسیر دیتا (پیش‌فرض: /var/lib/conduit)
@@ -41,13 +42,14 @@ chmod +x conduit-install-universal.sh
 سطح لاگ (-v یا -vv)
 
 سقف حجم لاگ سیستم (journald)
-
+---
 بررسی وضعیت و لاگ
 وضعیت سرویس:
 
 bash
 systemctl status conduit -l --no-pager
 لاگ زنده:
+---
 
 bash
 journalctl -fu conduit.service
@@ -61,7 +63,7 @@ journalctl -fu conduit.service
 -d یا --data-dir: مسیر ذخیره state/keys
 
 -v / -vv: افزایش سطح لاگ (Verbose/Debug)
-
+---
 تغییر تنظیمات بعد از نصب
 ویرایش فایل سرویس:
 
@@ -72,11 +74,13 @@ nano /etc/systemd/system/conduit.service
 bash
 systemctl daemon-reload
 systemctl restart conduit
+---
 حذف (Uninstall)
 اگر فایل uninstall.sh را اضافه کرده‌اید:
 
 bash
 sudo -i
 ./uninstall.sh
+---
 مسئولیت استفاده
 استفاده از این ابزار و مسئولیت‌های شبکه/قانونی و امنیتی با کاربر است. این پروژه صرفاً ابزار نصب و مدیریت سرویس را ارائه می‌دهد.
